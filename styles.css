@@ -655,7 +655,7 @@ body {
 /* Newsletter Section */
 .newsletter {
     padding: 50px 0;
-    background: var(--accent);
+    background: var(--gray);
     color: white;
     transition: all 0.3s ease;
 }
