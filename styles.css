@@ -1,6 +1,6 @@
 /* Base Styles & Reset */
 :root {
-    --primary: #1a365d;
+    --primary: #000000;
     --secondary: #4299e1;
     --accent: #38b2ac;
     --light: #f7fafc;
@@ -16,11 +16,12 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    color: var(--dark);
-    background-color: white;
-    padding-top: 80px; /* Added to compensate for fixed header */
+  font-family: "Kalnia thin", serif; /* Fallback to serif if Kalnia fails */
+  font-weight: 100px;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: white;
+  padding-top: 80px;
 }
 
 .container {
@@ -46,9 +47,10 @@ body {
 }
 
 .sticky-header .logo {
-    font-size: 42px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 400;
     color: var(--primary);
+
 }
 
 .nav-links {
@@ -94,9 +96,11 @@ body {
 }
 
 .text-container {
+    width: 600px;
     position: relative;
     padding: 20px;
     transition: all 0.3s ease;
+    margin-bottom : 12px;
 }
 
 .text-container::before {
@@ -651,7 +655,7 @@ body {
 /* Newsletter Section */
 .newsletter {
     padding: 50px 0;
-    background: var(--primary);
+    background: var(--accent);
     color: white;
     transition: all 0.3s ease;
 }
