@@ -53,6 +53,42 @@ body {
 
 }
 
+/* Sticky Header */
+/* .sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px 100px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.sticky-header .logo {
+    /* Remove the font styles since we're using an image */
+    height: 50px; /* Match your previous font size */
+    display: flex;
+    align-items: center;
+}
+
+.sticky-header .logo img {
+    height: 100%; /* Make image fill the logo container height */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 200px; /* Adjust based on your logo's width */
+    transition: all 0.3s ease;
+}
+
+/* Optional: Add hover effect */
+.sticky-header .logo img:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+} */
+
 .nav-links {
     display: flex;
     gap: 30px;
