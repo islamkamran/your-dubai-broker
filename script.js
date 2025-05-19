@@ -1,3 +1,92 @@
+// Add this carousel functionality to your existing JS
+
+// Initialize carousels
+function initCarousels() {
+    // Why Work With Us Carousel
+    const diffCarousel = document.querySelector('.diff-carousel');
+    const diffCards = document.querySelectorAll('.diff-carousel .diff-card');
+    const diffPrevBtn = document.querySelector('.differentiators .carousel-prev');
+    const diffNextBtn = document.querySelector('.differentiators .carousel-next');
+    let diffCurrentIndex = 0;
+    const diffCardWidth = diffCards[0].offsetWidth + 30; // width + gap
+    
+    // Testimonials Carousel
+    const testimonialCarousel = document.querySelector('.testimonial-carousel');
+    const testimonialCards = document.querySelectorAll('.testimonial-carousel .testimonial-card');
+    const testimonialPrevBtn = document.querySelector('.testimonials .carousel-prev');
+    const testimonialNextBtn = document.querySelector('.testimonials .carousel-next');
+    let testimonialCurrentIndex = 0;
+    const testimonialCardWidth = testimonialCards[0].offsetWidth + 30; // width + gap
+    
+    // Function to update carousel position
+    function updateCarousel(carousel, index, cardWidth) {
+        carousel.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+    
+    // Why Work With Us Carousel Navigation
+    diffPrevBtn.addEventListener('click', () => {
+        if (diffCurrentIndex > 0) {
+            diffCurrentIndex--;
+            updateCarousel(diffCarousel, diffCurrentIndex, diffCardWidth);
+        }
+    });
+    
+    diffNextBtn.addEventListener('click', () => {
+        if (diffCurrentIndex < diffCards.length - 2) { // Show 2 cards at a time
+            diffCurrentIndex++;
+            updateCarousel(diffCarousel, diffCurrentIndex, diffCardWidth);
+        }
+    });
+    
+    // Testimonials Carousel Navigation
+    testimonialPrevBtn.addEventListener('click', () => {
+        if (testimonialCurrentIndex > 0) {
+            testimonialCurrentIndex--;
+            updateCarousel(testimonialCarousel, testimonialCurrentIndex, testimonialCardWidth);
+        }
+    });
+    
+    testimonialNextBtn.addEventListener('click', () => {
+        if (testimonialCurrentIndex < testimonialCards.length - 2) { // Show 2 cards at a time
+            testimonialCurrentIndex++;
+            updateCarousel(testimonialCarousel, testimonialCurrentIndex, testimonialCardWidth);
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newDiffCardWidth = diffCards[0].offsetWidth + 30;
+        updateCarousel(diffCarousel, diffCurrentIndex, newDiffCardWidth);
+        
+        const newTestimonialCardWidth = testimonialCards[0].offsetWidth + 30;
+        updateCarousel(testimonialCarousel, testimonialCurrentIndex, newTestimonialCardWidth);
+    });
+}
+
+// Initialize carousels when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initCarousels();
+    
+    // Your existing DOMContentLoaded code...
+    const elements = document.querySelectorAll('.diff-card, .testimonial-card, .blog-card');
+    elements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+    
+    // Initialize header padding based on scroll position
+    const header = document.querySelector('.sticky-header');
+    if (window.scrollY > 50) {
+        header.style.padding = '15px 100px';
+        if (window.innerWidth <= 768) {
+            header.style.padding = '10px 20px';
+        }
+    }
+});
+
+// Keep all your existing JavaScript below this point
+
 // Sticky Header
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.sticky-header');

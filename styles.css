@@ -1,3 +1,93 @@
+/* Add these new styles to your existing CSS */
+
+/* Carousel Styles */
+.diff-carousel-container, .testimonial-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+.diff-carousel, .testimonial-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: #2c7a7b;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+/* Adjust card widths for carousel */
+.diff-carousel .diff-card {
+    min-width: calc(50% - 15px);
+    flex: 0 0 calc(50% - 15px);
+    margin: 0;
+}
+
+.testimonial-carousel .testimonial-card {
+    min-width: calc(50% - 15px);
+    flex: 0 0 calc(50% - 15px);
+    margin: 0;
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 768px) {
+    .diff-carousel .diff-card,
+    .testimonial-carousel .testimonial-card {
+        min-width: calc(100% - 15px);
+        flex: 0 0 calc(100% - 15px);
+    }
+    
+    .diff-carousel-container, .testimonial-carousel-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .diff-carousel-container, .testimonial-carousel-container {
+        padding: 0 30px;
+    }
+    
+    .carousel-prev, .carousel-next {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Keep all your existing CSS below this point */
+
 /* Base Styles & Reset */
 :root {
     --primary: #000000;
@@ -38,7 +128,7 @@ body {
     right: 0;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 20px 100px;
+    padding: 0px 100px;
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -529,7 +619,8 @@ body {
 
 /* Differentiators Section */
 .differentiators {
-    padding: 50px 100px 50px 100px;
+    padding: 50px 50px 50px 100px;
+    padding: 0px;
     background: var(--light);
     transition: all 0.3s ease;
 }
