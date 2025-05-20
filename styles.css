@@ -106,7 +106,7 @@
 }
 
 body {
-  font-family: "Kalnia thin", serif; /* Fallback to serif if Kalnia fails */
+  font-family: " Outfit", Medium; /* Fallback to serif if Kalnia fails */
   font-weight: 100px;
   line-height: 1.6;
   color: var(--dark);
@@ -137,14 +137,14 @@ body {
 }
 
 .sticky-header .logo {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 400;
     color: var(--primary);
 
 }
 
 /* Sticky Header */
-/* .sticky-header {
+.sticky-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -161,7 +161,7 @@ body {
 
 .sticky-header .logo {
     /* Remove the font styles since we're using an image */
-    height: 50px; /* Match your previous font size */
+    height: 20px; /* Match your previous font size */
     display: flex;
     align-items: center;
 }
